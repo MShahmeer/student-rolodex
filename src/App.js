@@ -1,6 +1,6 @@
 import { Component } from "react";
 import "./App.css";
-import CardListComponent from "./Components/CardList/CardListComponent"
+import CardListComponent from "./Components/CardList/CardListComponent";
 
 class App extends Component {
   constructor() {
@@ -8,6 +8,7 @@ class App extends Component {
 
     this.state = {
       students: [],
+      searchFiled: "",
     };
   }
 
@@ -20,7 +21,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CardListComponent students = {this.state.students}/>
+        <input
+          type="search"
+          placeholder="Search Stundent"
+          onChange={(e) => this.setState({ searchField: e.target.value })}
+        />
+        <CardListComponent students={this.state.students} />
       </div>
     );
   }
