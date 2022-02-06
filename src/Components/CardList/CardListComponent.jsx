@@ -1,9 +1,11 @@
 import './CardListStyles.css'
-
+import CardComponent from '../Card/CardComponent'
 const CardListComponent = (props) => {
   return (
     <div className  = 'card-list'>
-      {props.children}
+      {props.students.map((student) => (
+        <CardComponent key={student.id} student = {student}/>
+      ))}
     </div>
   )
 }
