@@ -11,8 +11,6 @@ class App extends Component {
       students: [],
       searchField: "",
     };
-    
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -21,9 +19,9 @@ class App extends Component {
       .then((users) => this.setState({ students: users }));
   }
 
-  handleChange(e){
-    this.setState({ searchField: e.target.value })
-  }
+  handleChange = (e) => {
+    this.setState({ searchField: e.target.value });
+  };
 
   render() {
     const { students, searchField } = this.state;
@@ -32,9 +30,9 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <SearchBoxComponent 
+        <SearchBoxComponent
           placeholder="Search Student"
-          handleChange = {this.handleChange}
+          handleChange={this.handleChange}
         />
         <CardListComponent students={filteredStudents} />
       </div>
