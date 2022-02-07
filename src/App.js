@@ -11,7 +11,8 @@ class App extends Component {
       students: [],
       searchField: "",
     };
-
+    
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
