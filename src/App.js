@@ -8,7 +8,7 @@ class App extends Component {
 
     this.state = {
       students: [],
-      searchFiled: "",
+      searchField: "",
     };
   }
 
@@ -19,6 +19,10 @@ class App extends Component {
   }
 
   render() {
+    const { students, searchField } = this.state;
+    const filteredStudents = students.filter((student) =>
+      student.name.toLowerCase().includes(searchField.toLowerCase())
+    );
     return (
       <div className="App">
         <input
@@ -26,7 +30,7 @@ class App extends Component {
           placeholder="Search Stundent"
           onChange={(e) => this.setState({ searchField: e.target.value })}
         />
-        <CardListComponent students={this.state.students} />
+        <CardListComponent students={filteredStudents} />
       </div>
     );
   }
