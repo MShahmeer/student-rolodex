@@ -11,6 +11,7 @@ class App extends Component {
       students: [],
       searchField: "",
     };
+
   }
 
   componentDidMount() {
@@ -20,7 +21,7 @@ class App extends Component {
   }
 
   handleChange(e){
-    (e) => this.setState({ searchField: e.target.value })
+    this.setState({ searchField: e.target.value })
   }
 
   render() {
